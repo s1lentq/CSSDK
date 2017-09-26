@@ -156,9 +156,9 @@ public:
 	bool RemoveOnFire() const { return (pev->spawnflags & SF_PKILL_FIREONCE) == SF_PKILL_FIREONCE; }
 };
 
-#define SF_GAMECOUNT_FIREONCE BIT(0) // Remove entity after firing.
-#define SF_GAMECOUNT_RESET    BIT(1) // Reset entity Initial value after fired.
-#define SF_GAMECOUNT_RESET    BIT(2) // Fire a target when initial value is higher than limit value.
+#define SF_GAMECOUNT_FIREONCE   BIT(0) // Remove entity after firing.
+#define SF_GAMECOUNT_RESET      BIT(1) // Reset entity Initial value after fired.
+#define SF_GAMECOUNT_OVER_LIMIT BIT(2) // Fire a target when initial value is higher than limit value.
 
 // Counts events and fires target
 class CGameCounter: public CRulePointEntity {
@@ -175,7 +175,7 @@ public:
 
 	int CountValue() const { return int(pev->frags); }
 	int LimitValue() const { return int(pev->health); }
-	bool HitLimit() const { return CountValue() == LimitValue(); }
+	bool HitLimit() const  { return ((pev->spawnflags & SF_GAMECOUNT_OVER_LIMIT) == SF_GAMECOUNT_OVER_LIMIT) ? (CountValue() >= LimitValue()) : (CountValue() == LimitValue()); }
 
 private:
 	void SetCountValue(int value) { pev->frags = value; }

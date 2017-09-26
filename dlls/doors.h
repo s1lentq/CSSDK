@@ -35,9 +35,9 @@ const float BUTTON_SOUNDWAIT    = 0.5f;
 #define SF_DOOR_START_OPEN          BIT(0)
 #define SF_DOOR_PASSABLE            BIT(3)
 #define SF_DOOR_NO_AUTO_RETURN      BIT(5)
-#define SF_DOOR_USE_ONLY            BIT(8)	// door must be opened by player's use button.
-#define SF_DOOR_TOUCH_ONLY_CLIENTS  BIT(10)	// Only clients can touch
-#define SF_DOOR_ACTUALLY_WATER      BIT(31)	// This bit marks that func_door are actually func_water
+#define SF_DOOR_USE_ONLY            BIT(8)  // door must be opened by player's use button.
+#define SF_DOOR_TOUCH_ONLY_CLIENTS  BIT(10) // Only clients can touch
+#define SF_DOOR_ACTUALLY_WATER      BIT(31) // This bit marks that func_door are actually func_water
 
 class CBaseDoor: public CBaseToggle {
 public:

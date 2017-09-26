@@ -61,7 +61,7 @@ const float MAX_DIST_RELOAD_SOUND = 512.0f;
 #define WEAPON_ACTIVITY_VOLUME      64
 
 // spawn flags
-#define SF_DETONATE                 0x0001 // Grenades flagged with this will be triggered when the owner calls detonateSatchelCharges
+#define SF_DETONATE                 BIT(0) // Grenades flagged with this will be triggered when the owner calls detonateSatchelCharges
 
 // custom enum
 enum ArmorType

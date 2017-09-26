@@ -229,7 +229,7 @@ public:
 	bool m_bSetModel;
 };
 
-#define SF_GIBSHOOTER_REPEATABLE BIT(0)
+#define SF_GIBSHOOTER_REPEATABLE BIT(0) // Allows a gibshooter to be refired
 
 class CGibShooter: public CBaseDelay {
 public:
@@ -294,9 +294,9 @@ public:
 	void SetBloodAmount(float amount) { pev->dmg = amount; }
 };
 
-#define SF_SHAKE_EVERYONE BIT(0)
-#define SF_SHAKE_DISRUPT  BIT(1)
-#define SF_SHAKE_INAIR    BIT(2)
+#define SF_SHAKE_EVERYONE BIT(0) // Don't check radius
+#define SF_SHAKE_DISRUPT  BIT(1) // Disrupt controls
+#define SF_SHAKE_INAIR    BIT(2) // Shake players in air
 
 class CShake: public CPointEntity {
 public:
@@ -315,8 +315,8 @@ public:
 	void SetRadius(float radius) { pev->dmg = radius; }
 };
 
-#define SF_FADE_IN       BIT(0)
-#define SF_FADE_MODULATE BIT(1)
+#define SF_FADE_IN       BIT(0) // Fade in, not out
+#define SF_FADE_MODULATE BIT(1) // Modulate, don't blend
 #define SF_FADE_ONLYONE  BIT(2)
 
 class CFade: public CPointEntity {
@@ -343,7 +343,7 @@ public:
 	virtual void Use(CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE useType, float value) = 0;
 };
 
-#define SF_FUNNEL_REVERSE BIT(0)
+#define SF_FUNNEL_REVERSE BIT(0) // Funnel effect repels particles instead of attracting them
 
 class CEnvFunnel: public CBaseDelay {
 public:

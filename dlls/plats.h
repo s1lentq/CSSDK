@@ -80,6 +80,10 @@ public:
 	Vector m_start;
 };
 
+#define SF_TRAIN_WAIT_RETRIGGER BIT(0)
+#define SF_TRAIN_START_ON       BIT(2) // Train is initially moving
+#define SF_TRAIN_PASSABLE       BIT(3) // Train is not solid -- used to make water trains
+
 class CFuncTrain: public CBasePlatTrain {
 public:
 	virtual void Spawn() = 0;

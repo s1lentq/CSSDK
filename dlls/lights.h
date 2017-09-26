@@ -28,7 +28,7 @@
 
 #pragma once
 
-#define SF_LIGHT_START_OFF 1
+#define SF_LIGHT_START_OFF BIT(0)
 
 class CLight: public CPointEntity {
 public:
